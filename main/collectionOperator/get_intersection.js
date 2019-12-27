@@ -2,12 +2,14 @@
 
 function get_intersection(collection_a, collection_b) {
   //在这里写入代码
-  var result=[];
-  collection_b.forEach(element => {
-    if(collection_a.includes(element)){
+  var result = [];
+  function judgeInclude(element) {
+    if (collection_a.includes(element)) {
       result.push(element);
     }
-  });
+  }
+  collection_b.forEach(judgeInclude);
+
   return result;
 }
 
