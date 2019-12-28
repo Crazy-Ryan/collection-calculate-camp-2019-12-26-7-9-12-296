@@ -2,9 +2,8 @@
 
 function compute_average(collection) {
   //在这里写入代码
-  return collection.reduce(function (accumulator, currentValue) {
-    return accumulator + currentValue;
-  }, 0) / (collection.length);
+  var compute_elements_sum = require('../../main/reduce/compute_sum.js');
+  return compute_elements_sum(collection)/(collection.length);
 }
 
 module.exports = compute_average;
