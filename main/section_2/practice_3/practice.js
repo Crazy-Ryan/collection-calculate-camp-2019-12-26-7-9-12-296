@@ -21,7 +21,7 @@ function count_same_elements(collection) {
   for (var index = 0; index < collection.length; index++) {
     var splittedEle;
     if (regExDash.test(collection[index]) || regExColon.test(collection[index]) || regExBracket.test(collection[index])) {
-      var splittedEle = collection[index].split(/-|:|\[|\]/);
+      var splittedEle = collection[index].split(/[-:\[\]]/);
       var repeatContent = splittedEle[0];
       var repeatTimes = splittedEle[1];
       for (var ind = 0; ind < repeatTimes; ind++) {
