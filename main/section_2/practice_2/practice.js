@@ -3,7 +3,7 @@ function count_same_elements(collection) {
   var count_same_elements = require("../../../main/section_2/practice_1/practice.js");
 
   var flatColl = [];
-  var regEx = /(-[0-9]*)$/
+  var regEx = /(-[0-9]*)$/;
   for (var index = 0; index < collection.length; index++) {
     if(regEx.test(collection[index])){
       var splittedEle = collection[index].split('-');
