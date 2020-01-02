@@ -7,7 +7,7 @@ var is_exist_element = function (collection, element) {
       }
       return accumulator;
     }, []);
-  }
+  } //TODO: 分号呢？
   return chooseEvenIndex(collection).includes(element);
 
 };

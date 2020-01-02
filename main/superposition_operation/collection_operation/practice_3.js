@@ -10,7 +10,7 @@ function hybrid_operation_to_uneven(collection) {
   function oddJudge(number) {
     return 1 === number % 2;
   }
-  return compute_elements_sum(mapToThreeMultiplesAddFive(collection.filter(oddJudge)));
+  return compute_elements_sum(mapToThreeMultiplesAddFive(collection.filter(oddJudge))); //TODO: 建议函数inline
 }
 
 module.exports = hybrid_operation_to_uneven;

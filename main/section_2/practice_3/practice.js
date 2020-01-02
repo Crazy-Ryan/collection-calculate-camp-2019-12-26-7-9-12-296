@@ -4,7 +4,7 @@ function count_same_elements(collection) {
   var regExDash = /(-[0-9]*)$/;
   var regExColon = /(:[0-9]*)$/;
   var regExBracket = /([[0-9]*])$/;
-  function count_same_elements(collection) {
+  function count_same_elements(collection) { //TODO: 建议函数放在外面
     var count = [];
     var grouping_count = require("../../../main/filter/grouping_count.js");
     var instanceCount = grouping_count(collection);

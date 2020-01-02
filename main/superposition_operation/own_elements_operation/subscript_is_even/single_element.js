@@ -7,7 +7,7 @@ var single_element = function (collection) {
       }
       return accumulator;
     }, []);
-  }
+  } //TODO: 分号呢？
   function singleNums(accumulator, currentValue, index, array){
     if (array.indexOf(currentValue) === array.lastIndexOf(currentValue)) {
       accumulator.push(currentValue);

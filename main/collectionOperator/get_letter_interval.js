@@ -7,7 +7,7 @@ function get_letter_interval(number_a, number_b) {
   function convertFromNumToChar(number) {
     result.push(String.fromCharCode(number + 96));
   }
-  get_integer_interval(number_a, number_b).forEach(convertFromNumToChar);
+  get_integer_interval(number_a, number_b).forEach(convertFromNumToChar); //TODO: 建议函数inline
   return result;
 }
 

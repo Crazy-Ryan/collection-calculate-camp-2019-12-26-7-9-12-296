@@ -9,7 +9,7 @@ function median_to_letter(collection) {
     return (number < 26 ? String.fromCharCode(number + 97)
       : String.fromCharCode(number / 26 + 96) + String.fromCharCode(number % 26 + 97));
   }
-  return convertFromNumToChar(Math.ceil(compute_median(collection)));
+  return convertFromNumToChar(Math.ceil(compute_median(collection))); //TODO: 建议函数放外面
 }
 
 module.exports = median_to_letter;

@@ -8,7 +8,7 @@ function get_union(collection_a, collection_b) {
         result.push(element);
       }
     }
-    collection_b.forEach(judgeInclude);
+    collection_b.forEach(judgeInclude); //TODO: 建议函数inline
     return result;
 }
 

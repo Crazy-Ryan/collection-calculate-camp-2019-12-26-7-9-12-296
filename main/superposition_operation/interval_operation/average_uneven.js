@@ -7,7 +7,7 @@ function average_uneven(collection) {
   function oddJudge(number) {
     return 1 === number % 2;
   }
-  return compute_average(collection.filter(oddJudge));
+  return compute_average(collection.filter(oddJudge)); //TODO: 建议函数inline
 }
 
 module.exports = average_uneven;

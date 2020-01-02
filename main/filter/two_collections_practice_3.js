@@ -11,7 +11,7 @@ function choose_divisible_integer(collection_a, collection_b) {
     return accumulator;
   }, []);
 
-  function isDivisibleByB(num) {
+  function isDivisibleByB(num) { //TODO: 建议函数抽到这个function外面
     var flag = false;
     collection_b.forEach(element => {
       if (0 === num % element) {

@@ -13,7 +13,7 @@ function get_letter_interval_2(number_a, number_b) {
       result.push(String.fromCharCode(number / 26 + 96) + String.fromCharCode(number % 26 + 97));
     }
   }
-  get_integer_interval(number_a, number_b).forEach(convertFromNumToChar);
+  get_integer_interval(number_a, number_b).forEach(convertFromNumToChar); //TODO: 建议函数inline，或者定义在这个函数外面
   return result;
 }
 

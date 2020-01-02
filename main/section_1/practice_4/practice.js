@@ -6,7 +6,7 @@ function collect_same_elements(collection_a, object_b) {
       result.push(element.key);
     }
   }
-  collection_a.forEach(judgeInclude);
+  collection_a.forEach(judgeInclude); //TODO: 建议函数inline
   return result;
 }
 

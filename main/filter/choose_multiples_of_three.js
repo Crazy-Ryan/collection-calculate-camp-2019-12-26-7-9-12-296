@@ -6,7 +6,7 @@ function choose_multiples_of_three(collection) {
   function multipleOfThreeJudge(number) {
     return 0 === number % 3;
   }
-  return collection.filter(multipleOfThreeJudge);
+  return collection.filter(multipleOfThreeJudge); //TODO: 建议函数inline
 }
 
 module.exports = choose_multiples_of_three;

@@ -7,7 +7,7 @@ var number_map_to_word_over_26 = function (collection) {
       : String.fromCharCode(number / 26 + 96) + String.fromCharCode(number % 26 + 97));
   }
 
-  return collection.map(x => convertFromNumToChar(x));
+  return collection.map(x => convertFromNumToChar(x)); //TODO: 建议函数inline
 };
 
 module.exports = number_map_to_word_over_26;
