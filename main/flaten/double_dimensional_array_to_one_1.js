@@ -3,9 +3,7 @@
 function double_to_one(collection) {
 
   //在这里写入代码
-  return collection.reduce(function(accumulator, currentValue){
-    return accumulator.concat(currentValue);
-  },[]);
+  return collection.flat();
 }
 
 module.exports = double_to_one;
