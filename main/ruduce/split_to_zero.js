@@ -2,7 +2,7 @@
 
 function spilt_to_zero(number, interval) {
   //在这里写入代码
-  var result = [number];
+  let result = [number];
   do {
     number = Math.round(10 * (number - interval)) / 10;
     result.push(number);
