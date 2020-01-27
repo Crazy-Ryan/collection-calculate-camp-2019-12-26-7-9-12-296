@@ -3,15 +3,8 @@
 function choose_no_common_elements(collection_a, collection_b) {
 
   //在这里写入代码
-  var result = [];
-  function judgeInclude(element) {
-    if (!collection_b.includes(element)) {
-      result.push(element);
-    }
-  }
-  collection_a.forEach(judgeInclude); //TODO: 建议函数inline
 
-  return result;
+  return collection_a.filter(number => !collection_b.includes(number));
 }
 
 module.exports = choose_no_common_elements;

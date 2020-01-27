@@ -1,12 +1,11 @@
 'use strict';
+let collect_all_even = require('../../main/collectionOperator/collect_all_even.js');
 
 function choose_even(collection) {
 
   //在这里写入代码
-  function evenJudge(number) {
-    return 0 === number % 2;
-  }
-  return collection.filter(evenJudge); //TODO: 建议函数inline
+
+  return collect_all_even(collection);
 }
 
 module.exports = choose_even;

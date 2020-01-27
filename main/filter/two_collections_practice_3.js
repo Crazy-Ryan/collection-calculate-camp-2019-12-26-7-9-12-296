@@ -3,24 +3,10 @@
 function choose_divisible_integer(collection_a, collection_b) {
 
   //在这里写入代码
-  var result;
-  result = collection_a.reduce(function (accumulator, currentValue) {
-    if (isDivisibleByB(currentValue)) {
-      accumulator.push(currentValue);
-    }
-    return accumulator;
-  }, []);
 
-  function isDivisibleByB(num) { //TODO: 建议函数抽到这个function外面
-    var flag = false;
-    collection_b.forEach(element => {
-      if (0 === num % element) {
-        flag = true;
-      }
-    });
-    return flag;
-  }
-  return result;
+  return collection_a.filter(number => {
+    return -1 !== collection_b.findIndex(num => 0 === number % num);
+  })
 }
 
 module.exports = choose_divisible_integer;
