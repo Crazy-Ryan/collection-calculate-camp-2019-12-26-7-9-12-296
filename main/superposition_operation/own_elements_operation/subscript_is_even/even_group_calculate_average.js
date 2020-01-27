@@ -1,37 +1,30 @@
 'use strict';
+
+let choose_even = require("../../../../main/filter/choose_even.js");
+let compute_average = require('../../../../main/reduce/compute_average.js');
+
 var even_group_calculate_average = function (collection) {
 
-  var choose_even = require("../../../../main/filter/choose_even.js");
-  var compute_average = require('../../../../main/reduce/compute_average.js');
-  var chooseEvenIndex = function (collection) {
-    return collection.reduce(function (accumulator, currentValue, index) {
-      if (0 === (index + 1) % 2) {
-        accumulator.push(currentValue);
-      }
-      return accumulator;
-    }, []);
-  }
-  var evenNumbersWithEvenIndex = choose_even(chooseEvenIndex(collection));
+  let evenNumbersWithEvenIndex = choose_even(collection.filter((element, index) => 0 === (index + 1) % 2));
   if (0 === evenNumbersWithEvenIndex.length) {
     return [0];
   }
   else {
-    var result = [];
-    var lower_bound = 1;
-    var upper_bound = 10;
-    var maxNumber = Math.max(...evenNumbersWithEvenIndex);
-    var chooseBetween = function (collection, min, max) {
-      return collection.filter(x => ((x >= min) && (x < max)));
-    };
-    while (lower_bound < maxNumber) {
-      var boundAvg = compute_average(chooseBetween(evenNumbersWithEvenIndex, lower_bound, upper_bound));
+    let result = [];
+    let maxNumberOfDigits = Math.max(...evenNumbersWithEvenIndex).toString().length;
+
+    for (let index = 1; index <= maxNumberOfDigits; index++) {
+      let boundAvg = compute_average(chooseBetween(evenNumbersWithEvenIndex, index));
       if (boundAvg) {
         result.push(boundAvg);
       }
-      lower_bound *= 10;
-      upper_bound *= 10;
     }
     return result;
   }
 };
+
+function chooseBetween(collection, numberOfDigits) {
+  return collection.filter(x => x.toString().length === numberOfDigits);
+};
+
 module.exports = even_group_calculate_average;

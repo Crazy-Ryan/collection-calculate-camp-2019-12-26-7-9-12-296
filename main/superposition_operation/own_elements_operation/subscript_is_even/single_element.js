@@ -1,20 +1,7 @@
 'use strict';
 var single_element = function (collection) {
-  var chooseEvenIndex = function (collection) {
-    return collection.reduce(function (accumulator, currentValue, index) {
-      if (0 === (index + 1) % 2) {
-        accumulator.push(currentValue);
-      }
-      return accumulator;
-    }, []);
-  } //TODO: 分号呢？
-  function singleNums(accumulator, currentValue, index, array){
-    if (array.indexOf(currentValue) === array.lastIndexOf(currentValue)) {
-      accumulator.push(currentValue);
-    }
-    return accumulator;
-  }
-  return chooseEvenIndex(collection).reduce(singleNums, []);
+
+  return collection.filter((element, index) => 0 === (index + 1) % 2).filter((number, index, array) => array.indexOf(number) === array.lastIndexOf(number));
 
 };
 module.exports = single_element;
