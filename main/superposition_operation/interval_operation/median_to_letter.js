@@ -10,7 +10,7 @@ function median_to_letter(collection) {
 }
 
 function convertFromNumToChar(num) {
-  var number = num - 1;
+  let number = num - 1;
   return (number < 26 ? String.fromCharCode(number + 97)
     : String.fromCharCode(number / 26 + 96) + String.fromCharCode(number % 26 + 97));
 }
