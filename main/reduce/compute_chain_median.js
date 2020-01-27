@@ -1,11 +1,11 @@
 'use strict';
 
+let compute_median = require('../../main/reduce/compute_median.js');
+
 function compute_chain_median(collection) {
   //在这里写入代码
-  var compute_median = require('../../main/reduce/compute_median.js');
-  var charArrayInput = collection.split('->');
-  var numArrayInput = charArrayInput.map(x => +x);
-  return compute_median(numArrayInput);
+
+  return compute_median(collection.split('->').map(x => +x));
 }
 
 module.exports = compute_chain_median;
