@@ -1,38 +1,27 @@
 function count_same_elements(collection) {
   //在这里写入代码
-  var flatColl = [];
   var regExDash = /(-[0-9]*)$/;
   var regExColon = /(:[0-9]*)$/;
   var regExBracket = /([[0-9]*])$/;
-  function count_same_elements(collection) { //TODO: 建议函数放在外面
-    var count = [];
-    var grouping_count = require("../../../main/filter/grouping_count.js");
-    var instanceCount = grouping_count(collection);
-    var instanceKeys = Object.keys(instanceCount);
-    for (var index = 0; index < instanceKeys.length; index++) {
-      var itemCount = {};
-      itemCount.name = instanceKeys[index];
-      itemCount.summary = instanceCount[instanceKeys[index]];
-      count.push(itemCount);
-    }
-    return count;
-  }
 
-  for (var index = 0; index < collection.length; index++) {
-    var splittedEle;
-    if (regExDash.test(collection[index]) || regExColon.test(collection[index]) || regExBracket.test(collection[index])) {
-      var splittedEle = collection[index].split(/[-:\[\]]/);
-      var repeatContent = splittedEle[0];
-      var repeatTimes = splittedEle[1];
-      for (var ind = 0; ind < repeatTimes; ind++) {
-        flatColl.push(repeatContent);
-      }
+  return count_same_elements(collection.map((ele) => {
+    if (regExDash.test(ele) || regExColon.test(ele) || regExBracket.test(ele)) {
+      let splittedEle = ele.split(/[-:\[\]]/);
+      return Array(+splittedEle[1]).fill(splittedEle[0]);
     }
     else {
-      flatColl.push(collection[index]);
+      return ele;
     }
+  }).flat());
+
+  function count_same_elements(collection) {
+    //在这里写入代码
+    let grouping_count = require("../../../main/filter/grouping_count.js");
+    let instanceCount = grouping_count(collection);
+    let instanceKeys = Object.keys(instanceCount);
+    return instanceKeys.map(key => ({ name: key, summary: instanceCount[key] }));
   }
-  return count_same_elements(flatColl);
 }
+
 
 module.exports = count_same_elements;

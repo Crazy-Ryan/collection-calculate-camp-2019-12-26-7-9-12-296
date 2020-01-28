@@ -1,24 +1,17 @@
+
 function count_same_elements(collection) {
   //在这里写入代码
-  var count_same_elements = require("../../../main/section_2/practice_1/practice.js");
-
-  var flatColl = [];
-  var regEx = /(-[0-9]*)$/;
-  for (var index = 0; index < collection.length; index++) {
-    if(regEx.test(collection[index])){
-      var splittedEle = collection[index].split('-');
-      var repeatContent = splittedEle[0];
-      var repeatTimes = splittedEle[1];
-      for (var ind = 0; ind<repeatTimes;ind++){
-        flatColl.push(repeatContent);
-      }
+  let count_same_elements = require("../../../main/section_2/practice_1/practice.js");
+  let regEx = /(-[0-9]*)$/;
+  return count_same_elements(collection.map((ele) => {
+    if (regEx.test(ele)) {
+      let splittedEle = ele.split('-');
+      return Array(+splittedEle[1]).fill(splittedEle[0]);
     }
-    else{
-      flatColl.push(collection[index]);
+    else {
+      return ele;
     }
-  }
-  return count_same_elements(flatColl);
-
+  }).flat());
 }
 
 module.exports = count_same_elements;
